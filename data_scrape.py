@@ -5,7 +5,7 @@ import time
 
 def data_scrape():
     baseUrl = "https://www.espncricinfo.com/"
-    time.sleep(2)
+    time.sleep(0.5)
     page = requests.get(baseUrl).text
 
     soup = BeautifulSoup(page, 'html.parser')
