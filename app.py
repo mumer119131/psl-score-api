@@ -3,7 +3,7 @@ import data_scrape
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def scarpe():
     data_scrape.data_scrape()
     response = jsonify({"status": "200"})
