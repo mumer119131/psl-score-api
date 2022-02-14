@@ -13,12 +13,11 @@ def scarpe():
 
 @app.route("/all-res", methods=['POST'])
 def allResult():
-    print(request)
-    print(request.args)
-    print(request.form)
-    print(request.json)
-    print(request.values)
-    all_result.all_result()
+    
+    if(request.values.get("Body") == "a" or request.values.get("Body") == "A"):
+        all_result.all_result()
+    else:
+        data_scrape.data_scrape()    
     response = jsonify({"status": "200"})
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
