@@ -6,8 +6,10 @@ app = Flask(__name__)
 @app.route("/")
 def scarpe():
     data_scrape.data_scrape()
-    return "Done"
+    response = jsonify({"status": "200"})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

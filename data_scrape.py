@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import message
 
 
 def data_scrape():
@@ -29,5 +30,5 @@ def data_scrape():
         class_="match-info")[0].find_all(class_="status-text")[0].text
 
     result = f'{status}\n{team_one_name}  {team_one_score} \n {team_two_name}   {team_two_score} \n {status_text}'
-
+    message.send_msg(result)
     print(result)
