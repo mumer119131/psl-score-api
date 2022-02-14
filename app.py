@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import data_scrape
 app = Flask(__name__)
 
