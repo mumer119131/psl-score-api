@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify,request
 import data_scrape
 import all_result
 app = Flask(__name__)
@@ -13,6 +13,7 @@ def scarpe():
 
 @app.route("/all-res", methods=['POST'])
 def allResult():
+    print(request.args)
     all_result.all_result()
     response = jsonify({"status": "200"})
     response.headers.add('Access-Control-Allow-Origin', '*')
