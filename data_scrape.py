@@ -1,11 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 import message
-
+import time
 
 def data_scrape():
     baseUrl = "https://www.espncricinfo.com/"
-
+    time.sleep(2)
     page = requests.get(baseUrl).text
 
     soup = BeautifulSoup(page, 'html.parser')
